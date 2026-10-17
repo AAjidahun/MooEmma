@@ -1,0 +1,1407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MooEmma Motors | Clean US cars, imported for you</title>
+<meta name="description" content="Clean, accident-free cars bought in the US and brought to you in Nigeria. Pick one of ours or send us a car you found. Instalment plans on selected cars.">
+<meta property="og:title" content="MooEmma Motors">
+<meta property="og:description" content="Pick the car. We bring it home. Clean US cars, imported for you, with tracking from purchase to your door.">
+<meta name="theme-color" content="#1C2026">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23F5B700'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial' font-weight='900' font-size='19' fill='%231C2026'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+/* MooEmma Motors: shared styles for every page */
+:root{
+  --asphalt:#1C2026; --asphalt-2:#262C34; --asphalt-line:#414A56;
+  --danfo:#F5B700; --danfo-hover:#FFC72C;
+  --concrete:#E9EBEE; --paper:#FFFFFF; --ink:#1C2026; --muted:#59626E; --line:#D2D6DC; --field:#B9C0C9;
+  --go:#1E7F4F; --hold:#8A5A00; --hold-bg:#FCEFC7; --sold:#B4322A;
+  --wa:#138A4A;
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;font-family:var(--font);font-size:1rem;line-height:1.55;color:var(--ink);background:var(--concrete);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.05;font-stretch:125%;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.on-dark :focus-visible{outline-color:var(--danfo)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:4px;border:2px solid transparent;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;line-height:1.1;transition:background-color .15s,border-color .15s,color .15s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--danfo);color:var(--asphalt)}
+.btn-primary:hover{background:var(--danfo-hover)}
+.btn-line-dark{border-color:var(--asphalt-line);color:#fff;background:transparent}
+.btn-line-dark:hover{border-color:#fff}
+.btn-dark{background:var(--asphalt);color:#fff}
+.btn-dark:hover{background:#000}
+.btn-line{border-color:var(--line);background:var(--paper);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#0F733D}
+.btn[disabled]{opacity:.6;cursor:progress}
+.btn-sm{min-height:38px;padding:0 14px;font-size:.92rem}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:30;background:var(--asphalt);color:#fff;padding-top:env(safe-area-inset-top,0px)}
+.site-header .wrap{display:flex;align-items:center;gap:28px;height:64px;position:relative}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:850;font-stretch:125%;font-size:1.12rem;letter-spacing:-.01em}
+.brand-mark{width:30px;height:30px;border-radius:5px;background:var(--danfo);color:var(--asphalt);display:grid;place-items:center;font-weight:900;font-size:1.05rem}
+.brand img{height:36px;width:auto}
+.brand{white-space:nowrap}
+@media (max-width:480px){.hide-sm{display:none}.wa-head>span{display:none}.wa-head{padding:0 11px}.wa-head svg{width:20px;height:20px}}
+@media (max-width:360px){.brand{font-size:1rem}}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a{color:#C3C9D1;text-decoration:none;font-weight:500}
+.nav a:hover{color:#fff}
+.nav a[aria-current="page"]{color:#fff;text-decoration:underline;text-decoration-color:var(--danfo);text-decoration-thickness:3px;text-underline-offset:8px}
+.menu-btn{display:none;min-height:40px;padding:0 14px;border:2px solid var(--asphalt-line);border-radius:4px;background:transparent;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+@media (max-width:1180px){
+  .site-header .wrap{gap:12px}
+  .wa-head{margin-left:auto}
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--asphalt);border-top:1px solid var(--asphalt-line);padding:6px 20px 14px;margin:0}
+  .nav.open{display:flex}
+  .nav a{padding:12px 0;font-size:1.05rem;border-bottom:1px solid var(--asphalt-line)}
+  .nav a[aria-current="page"]{text-decoration:none;color:var(--danfo)}
+}
+
+/* Hero */
+.hero{background:var(--asphalt);color:#fff;padding:64px 0 72px;overflow:hidden}
+.hero h1{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:850;max-width:13ch}
+.hero .lede{font-size:clamp(1.05rem,1.6vw,1.2rem);color:#C3C9D1;max-width:50ch;margin:22px 0 30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.route-box{position:relative;margin-top:64px}
+.route{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.route::before{content:"";position:absolute;left:10%;right:10%;top:11px;height:4px;background:repeating-linear-gradient(90deg,var(--danfo) 0 26px,transparent 26px 44px)}
+.route li{position:relative;text-align:center;padding:40px 6px 0;font-weight:700;font-size:1rem}
+.route li::before{content:"";position:absolute;top:2px;left:50%;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:var(--asphalt);border:4px solid var(--danfo)}
+.route li span{display:block;color:#98A1AC;font-weight:400;font-size:.88rem;margin-top:2px}
+.route-car{position:absolute;top:-22px;left:10%;width:58px;transform:translateX(-50%);color:var(--danfo)}
+@media (prefers-reduced-motion:no-preference){
+  .route-car{animation:drive 3.2s cubic-bezier(.55,.05,.35,1) .5s both}
+  @keyframes drive{from{left:10%}to{left:90%}}
+}
+@media (prefers-reduced-motion:reduce){.route-car{left:90%}}
+@media (max-width:760px){
+  .hero{padding:44px 0 52px}
+  .route-box{margin-top:44px}.route{grid-template-columns:1fr;gap:20px}
+  .route::before{left:9px;right:auto;top:12px;bottom:12px;width:4px;height:auto;background:repeating-linear-gradient(180deg,var(--danfo) 0 18px,transparent 18px 30px)}
+  .route li{text-align:left;padding:0 0 0 42px}
+  .route li::before{left:11px;top:1px}
+  .route-car{display:none}
+}
+
+/* Sections */
+.section{padding:72px 0}
+.section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 32px;margin-bottom:26px}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800}
+.section-head p{color:var(--muted);max-width:58ch;margin-top:10px}
+
+/* Demo note */
+.demo-note{background:var(--paper);border-left:5px solid var(--danfo);padding:14px 18px;border-radius:0 4px 4px 0;margin-bottom:18px;font-size:.95rem}
+.demo-note strong{font-weight:700}
+
+/* Filters */
+.filters{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;background:var(--paper);padding:14px;border:1px solid var(--line);border-radius:6px}
+.filters .f-search{grid-column:span 2}
+.f-clear{display:flex;align-items:flex-end}
+.f-clear .btn{width:100%}
+.filter-hint{grid-column:1/-1;font-size:.84rem;color:var(--muted);margin-top:-4px}
+.money{position:relative}
+.money span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.money input{padding-left:28px;font-variant-numeric:tabular-nums}
+.money.bad input{border-color:var(--sold);background:#FDF4F3}
+.field label,.field .label{display:block;font-size:.84rem;font-weight:600;color:var(--muted);margin-bottom:5px}
+input,select,textarea{font:inherit;color:var(--ink);width:100%;min-height:46px;padding:10px 12px;border:1px solid var(--field);border-radius:4px;background:#fff}
+textarea{min-height:92px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--danfo);outline-offset:0;border-color:var(--ink)}
+@media (max-width:900px){.filters{grid-template-columns:1fr 1fr}.filters .f-search,.filters .f-sort,.filters .f-clear{grid-column:1/-1}}
+.results-bar{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:center;margin:20px 0 16px;color:var(--muted)}
+.check{display:inline-flex;align-items:center;gap:8px;cursor:pointer;color:var(--ink);font-weight:500}
+.check input{width:20px;height:20px;min-height:0;margin:0;accent-color:var(--asphalt)}
+
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+.card[hidden]{display:none}
+.pane-foot{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:26px;color:var(--muted);text-align:center}
+.pane-foot .btn{min-width:240px}
+.card{position:relative;touch-action:pan-y;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .15s}
+.card:hover{border-color:var(--ink)}
+.card-media{position:relative;aspect-ratio:16/10;background:#D8DCE1}
+.card-media img{width:100%;height:100%;object-fit:cover}
+.card-link{color:inherit;text-decoration:none}
+.card-link::after{content:"";position:absolute;inset:0;z-index:1}
+.card-link:focus-visible{outline:none}
+.card:has(.card-link:focus-visible){outline:3px solid var(--ink);outline-offset:2px}
+.slider{position:absolute;inset:0;overflow:hidden}
+.slider img{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+.slider img.on{opacity:1}
+.slide-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:rgba(28,32,38,.72);color:#fff;display:grid;place-items:center;cursor:pointer;padding:0;transition:opacity .15s,background-color .15s}
+.slide-btn:hover{background:rgba(28,32,38,.92)}
+.slide-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.slide-btn.prev{left:8px}
+.slide-btn.next{right:8px}
+.slide-btn:focus-visible{outline:3px solid var(--danfo);outline-offset:1px}
+@media (hover:hover){.card .slide-btn{opacity:0}.card:hover .slide-btn,.card:focus-within .slide-btn{opacity:1}}
+.dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px;pointer-events:none;z-index:2}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.6);box-shadow:0 0 0 1px rgba(0,0,0,.15);transition:background-color .2s,transform .2s}
+.dots i.on{background:var(--danfo);transform:scale(1.25)}
+@media (prefers-reduced-motion:reduce){.slider img{transition:none}}
+.gallery-main{position:relative}
+.card.is-sold .card-media img,.card.is-sold .ph svg{filter:grayscale(1);opacity:.75}
+.status{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:3px;font-size:.82rem;font-weight:700;background:var(--go);color:#fff}
+.status.reserved{background:var(--hold-bg);color:var(--hold)}
+.status.sold{background:var(--sold)}
+.lot{position:absolute;right:10px;bottom:10px;background:rgba(28,32,38,.86);color:#fff;font-size:.8rem;padding:3px 8px;border-radius:3px}
+.card-body{display:flex;flex-direction:column;gap:6px;padding:16px 18px 18px;flex:1}
+.card-title{font-size:1.22rem;font-weight:780;font-stretch:112%;line-height:1.15}
+.card-sub{color:var(--muted);font-size:.93rem}
+.card-price{font-size:1.55rem;font-weight:850;font-stretch:125%;margin-top:6px}
+.card-price small{display:block;font-size:.8rem;font-weight:500;font-stretch:100%;color:var(--muted);margin-top:2px}
+.specs-inline{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 16px;color:var(--muted);font-size:.9rem}
+.card-damage{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem}
+.card-damage b{font-weight:650}
+.deadline{color:var(--hold);font-weight:650;font-size:.9rem}
+.ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#7C8590;font-size:.88rem}
+.ph svg{width:46%;max-width:180px;color:#A3ABB5}
+
+/* Empty / error / loading */
+.empty{background:var(--paper);border:1px dashed var(--field);border-radius:6px;padding:40px 24px;text-align:center}
+.empty h3{font-size:1.35rem;font-weight:780;font-stretch:112%;margin-bottom:8px}
+.empty p{color:var(--muted);max-width:52ch;margin:0 auto 18px}
+.empty .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.skeleton{background:var(--paper);border:1px solid var(--line);border-radius:6px;height:380px;position:relative;overflow:hidden}
+.skeleton::before{content:"";position:absolute;inset:0 0 auto 0;aspect-ratio:16/10;background:#DEE1E5}
+
+/* Custom request band */
+.band{background:var(--danfo);color:var(--asphalt);padding:52px 0}
+.band .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.band h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:850;max-width:18ch}
+.band p{max-width:48ch;margin-top:10px;font-size:1.05rem}
+
+/* Steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:28px;counter-reset:step}
+.steps li{counter-increment:step;border-top:4px solid var(--asphalt);padding-top:16px}
+.steps li::before{content:counter(step);display:block;font-size:2.6rem;font-weight:900;font-stretch:125%;line-height:1;margin-bottom:12px}
+.steps h3{font-size:1.12rem;font-weight:760;font-stretch:110%;margin-bottom:8px}
+.steps p{color:var(--muted);font-size:.95rem}
+@media (max-width:980px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:40px}
+@media (max-width:860px){.faq-wrap{grid-template-columns:1fr}}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px 0;font-weight:700;font-size:1.06rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;line-height:1;font-weight:500;flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 18px;color:var(--muted);max-width:62ch}
+
+/* Footer */
+.site-footer{background:var(--asphalt);color:#C3C9D1;padding:48px 0 36px;font-size:.95rem}
+.footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px}
+.site-footer a{color:#fff}
+.footer-name{color:#fff;font-weight:850;font-stretch:125%;font-size:1.15rem}
+.footer-links{display:flex;flex-direction:column;gap:6px}
+.footer-links a{text-decoration:none;color:#C3C9D1}
+.footer-links a:hover{color:#fff}
+.site-footer .small{margin-top:28px;padding-top:20px;border-top:1px solid var(--asphalt-line);color:#98A1AC;font-size:.85rem}
+
+/* Dialogs */
+dialog{border:0;padding:0;border-radius:8px;background:var(--paper);color:var(--ink);width:min(980px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto}
+dialog::backdrop{background:rgba(18,21,26,.72)}
+@media (prefers-reduced-motion:no-preference){dialog[open]{animation:pop .18s ease-out}@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
+.dlg-close{position:sticky;top:0;float:right;margin:10px 10px -54px 0;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:rgba(28,32,38,.88);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer}
+.detail{display:grid;grid-template-columns:1.25fr 1fr}
+.gallery{background:#D8DCE1;align-self:start;position:sticky;top:0}
+@media (max-width:820px){.gallery{position:static}}
+.gallery-main{aspect-ratio:16/10;background:#D8DCE1;cursor:zoom-in}
+.gallery-main img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:6px;padding:8px;overflow-x:auto;background:var(--asphalt)}
+.thumbs button{flex:none;width:76px;height:50px;padding:0;border:2px solid transparent;border-radius:3px;overflow:hidden;cursor:pointer;background:#333}
+.thumbs button[aria-current="true"]{border-color:var(--danfo)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.detail-info{padding:26px 26px 28px}
+.detail-info h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:830;padding-right:40px}
+.detail-price{font-size:1.9rem;font-weight:850;font-stretch:125%;margin-top:14px}
+.detail-price small{display:block;font-size:.85rem;font-weight:500;font-stretch:100%;color:var(--muted)}
+.status-line{display:inline-block;margin-top:12px;padding:4px 10px;border-radius:3px;font-size:.85rem;font-weight:700;background:var(--go);color:#fff}
+.status-line.reserved{background:var(--hold-bg);color:var(--hold)}
+.status-line.sold{background:var(--sold)}
+.specs{display:grid;grid-template-columns:auto 1fr;gap:7px 18px;margin:20px 0}
+.specs dt{color:var(--muted)}
+.specs dd{margin:0;font-weight:600}
+.damage-box{background:var(--concrete);border-radius:4px;padding:16px 18px;margin-bottom:18px}
+.damage-box h3{font-size:1rem;font-weight:760;font-stretch:105%;margin-bottom:8px}
+.damage-box p+p{margin-top:6px}
+.detail-desc{color:var(--muted);margin-bottom:18px}
+.detail-actions{display:flex;flex-wrap:wrap;gap:10px}
+.detail-actions .btn-primary,.detail-actions .btn-dark{flex:1 1 100%}
+.note{font-size:.9rem;color:var(--muted);margin-top:14px}
+@media (max-width:820px){
+  dialog{width:100%;max-width:100%;max-height:100dvh;height:100dvh;border-radius:0;margin:0}
+  .detail{grid-template-columns:1fr}
+}
+
+/* Request form */
+#requestDialog{width:min(600px,calc(100% - 32px))}
+@media (max-width:820px){#requestDialog{width:100%}}
+.req{padding:28px 26px 26px}
+.req h2{font-size:1.65rem;font-weight:830;padding-right:44px;margin-bottom:8px}
+.req-summary{display:flex;gap:12px;align-items:center;background:var(--concrete);border-radius:4px;padding:10px 12px;margin:14px 0 6px;font-size:.93rem}
+.req-summary img,.req-summary .ph-mini{width:72px;height:48px;object-fit:cover;border-radius:3px;background:#C9CED5;flex:none}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.form-grid .full{grid-column:1/-1}
+@media (max-width:520px){.form-grid{grid-template-columns:1fr}}
+.req-intro{color:var(--muted)}
+.hp{position:absolute;left:-9999px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.92rem}
+.consent input{width:20px;height:20px;min-height:0;margin:2px 0 0;flex:none;accent-color:var(--asphalt)}
+.form-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.form-status{font-size:.95rem}
+.form-status.error{color:var(--sold);font-weight:600}
+.success{padding:36px 28px 30px}
+.success .tick{width:52px;height:52px;border-radius:50%;background:var(--go);color:#fff;display:grid;place-items:center;margin-bottom:16px}
+.success h2{font-size:1.8rem;font-weight:850;margin-bottom:12px}
+.ref{display:inline-block;font-size:1.3rem;font-weight:800;font-stretch:115%;background:var(--danfo);padding:4px 12px;border-radius:3px;margin:6px 0 14px}
+.success p{color:var(--muted);max-width:46ch}
+.success .form-actions{margin-top:22px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--asphalt);color:#fff;padding:12px 18px;border-radius:4px;z-index:100;font-weight:600;display:none}
+.toast.show{display:block}
+
+/* Why us */
+.why{background:var(--paper)}
+.why-head{display:grid;grid-template-columns:1fr 1.15fr;gap:20px 56px;align-items:end;margin-bottom:36px}
+.why-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800;max-width:16ch}
+.why-head p{color:var(--muted);max-width:56ch}
+.why-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:14px}
+.why-links a{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--danfo);text-decoration-thickness:3px;text-underline-offset:5px}
+.compare{border-top:4px solid var(--asphalt)}
+.compare-row{display:grid;grid-template-columns:.8fr 1.4fr 1.4fr;gap:6px 32px;padding:18px 0;border-bottom:1px solid var(--line)}
+.compare-row [role="rowheader"]{font-weight:760;font-stretch:110%}
+.compare-row .them{color:var(--muted)}
+.compare-row .ours{font-weight:600;padding-left:16px;border-left:4px solid var(--danfo)}
+.compare-top{font-weight:760;padding:14px 0}
+.compare-top .them{color:var(--ink)}
+.compare-top .ours{background:var(--danfo);border-left-color:var(--danfo);padding:4px 12px;border-radius:3px;justify-self:start}
+@media (max-width:760px){
+  .why-head{grid-template-columns:1fr}
+  .compare-row{grid-template-columns:1fr 1fr;gap:8px 16px}
+  .compare-row [role="rowheader"]{grid-column:1/-1}
+  .compare-top>span:first-child{display:none}
+  .compare-row .ours{padding-left:10px}
+}
+
+/* Inner page hero */
+.page-hero{background:var(--asphalt);color:#fff;padding:56px 0 60px}
+.page-hero h1{font-size:clamp(2.2rem,5.4vw,4rem);font-weight:850;max-width:16ch}
+.page-hero .lede{font-size:clamp(1.05rem,1.6vw,1.18rem);color:#C3C9D1;max-width:56ch;margin-top:20px}
+
+/* About */
+.prose-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:20px 56px}
+.prose-grid h2,.about-promise h2{font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:800}
+.prose{max-width:64ch}
+.prose p+p,.prose p+ul{margin-top:16px}
+.skip-list{margin:0;padding:0;list-style:none}
+.skip-list li{padding:14px 0 14px 22px;border-bottom:1px solid var(--line);position:relative}
+.skip-list li::before{content:"";position:absolute;left:0;top:23px;width:10px;height:4px;background:var(--sold)}
+.skip-list b{font-weight:700}
+.about-promise{background:var(--paper)}
+.about-promise h2{margin-bottom:32px}
+.promise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.promise-grid>div{border-top:4px solid var(--danfo);padding-top:16px}
+.promise-grid h3{font-size:1.15rem;font-weight:760;font-stretch:110%;margin-bottom:8px}
+.promise-grid p{color:var(--muted)}
+@media (max-width:900px){.prose-grid{grid-template-columns:1fr}.promise-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.promise-grid{grid-template-columns:1fr}}
+
+/* Tracking */
+.track-form{display:flex;gap:10px;margin-top:28px;max-width:560px}
+.track-form input{flex:1;min-height:52px;font-size:1.1rem;font-weight:700;letter-spacing:.04em;border:2px solid #fff}
+.track-form .btn{min-height:52px}
+@media (max-width:520px){.track-form{flex-direction:column}}
+.track-hint{margin-top:14px;color:#C3C9D1;font-size:.95rem}
+.linklike{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--danfo);text-decoration:underline;cursor:pointer}
+.track-intro{max-width:64ch}
+.track-intro h2{font-size:1.5rem;font-weight:800;margin-bottom:10px}
+.track-intro p{color:var(--muted)}
+.track-intro p+p{margin-top:10px}
+.track-section{padding-top:48px}
+.track-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:28px;align-items:start}
+@media (max-width:860px){.track-grid{grid-template-columns:1fr}}
+.track-card{background:var(--paper);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.track-car-img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.track-card-body{padding:24px}
+.track-hello{color:var(--muted)}
+.track-card h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:830;margin-top:4px}
+.track-meta{color:var(--muted);font-size:.92rem;margin-top:8px}
+.stage-now{margin-top:20px;background:var(--asphalt);color:#fff;border-radius:4px;padding:16px 18px;display:flex;flex-direction:column;gap:4px}
+.stage-now-label{color:#98A1AC;font-size:.88rem}
+.stage-now strong{font-size:1.5rem;font-weight:850;font-stretch:120%;color:var(--danfo);line-height:1.15}
+.stage-now span:last-child{color:#D5DAE0}
+.progress{height:10px;background:var(--concrete);border-radius:5px;overflow:hidden;margin-top:18px}
+.progress span{display:block;height:100%;background:var(--danfo)}
+.progress-text{font-size:.9rem;color:var(--muted);margin-top:6px}
+.eta{margin-top:14px;font-size:1.05rem}
+.eta b{font-weight:800}
+.update-box{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--danfo);border-radius:0 6px 6px 0;padding:18px 20px;margin:20px 0}
+.update-box h3{font-size:1.1rem;font-weight:760;font-stretch:110%;margin-bottom:8px}
+.update-box h3 span{font-weight:500;font-stretch:100%;color:var(--muted);font-size:.9rem;margin-left:6px}
+.update-photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:14px}
+.update-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px}
+.timeline{list-style:none;margin:0;padding:6px 0 6px;position:relative;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px 20px 8px 20px}
+.timeline li{position:relative;padding:0 0 22px 40px;display:grid;grid-template-columns:1fr auto;gap:2px 12px}
+.timeline li::before{content:"";position:absolute;left:9px;top:22px;bottom:-2px;width:4px;background:repeating-linear-gradient(180deg,var(--line) 0 8px,transparent 8px 14px)}
+.timeline li:last-child::before{display:none}
+.timeline li.done::before,.timeline li.current::before{background:repeating-linear-gradient(180deg,var(--danfo) 0 8px,transparent 8px 14px)}
+.timeline li.current::before{background:repeating-linear-gradient(180deg,var(--line) 0 8px,transparent 8px 14px)}
+.timeline li::after{content:"";position:absolute;left:1px;top:2px;width:20px;height:20px;border-radius:50%;border:4px solid var(--line);background:var(--paper)}
+.timeline li.done::after{background:var(--danfo);border-color:var(--danfo)}
+.timeline li.current::after{border-color:var(--asphalt);background:var(--danfo);box-shadow:0 0 0 4px rgba(245,183,0,.35)}
+.tl-name{font-weight:650}
+.timeline li.next .tl-name{color:var(--muted);font-weight:500}
+.timeline li.current .tl-name{font-weight:800}
+.tl-date{font-size:.88rem;color:var(--muted);text-align:right}
+.tl-desc{grid-column:1/-1;font-size:.92rem;color:var(--muted);margin-top:2px}
+
+/* Payment plans */
+.plan-badge{display:inline-block;align-self:flex-start;margin-top:4px;background:var(--hold-bg);color:var(--hold);font-weight:700;font-size:.85rem;padding:3px 9px;border-radius:3px}
+.card-cond{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.pay-box{border:1px solid var(--line);border-radius:4px;padding:16px 18px;margin-bottom:18px}
+.pay-box h3{font-size:1rem;font-weight:760;font-stretch:105%;margin-bottom:6px}
+.plan{padding:10px 0;border-top:1px solid var(--line)}
+.plan:first-of-type{border-top:0}
+.plan-name{font-weight:750;margin-bottom:4px}
+.plan-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.plan-table td{padding:3px 0;vertical-align:top}
+.plan-table td:first-child{width:3.2em;font-weight:700}
+.plan-table td:nth-child(2){width:9.5em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.plan-table td:last-child{color:var(--muted)}
+@media (max-width:420px){.plan-table td:nth-child(2){width:auto}}
+.hint{font-size:.86rem;color:var(--muted);margin-top:5px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 20px}
+
+/* Services band */
+.services .wrap{display:block}
+.services h2{max-width:none;margin-bottom:24px}
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.service-card{background:var(--paper);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.service-card h3{font-size:1.3rem;font-weight:800;font-stretch:115%;line-height:1.15}
+.service-card p{color:var(--muted);margin:0;max-width:none;font-size:1rem;flex:1}
+@media (max-width:760px){.service-grid{grid-template-columns:1fr}}
+
+/* Tracking payments */
+.pay-summary{border-top:1px solid var(--line);margin-top:18px;padding-top:16px}
+.pay-summary h3{font-size:1rem;font-weight:760;font-stretch:105%;margin-bottom:8px}
+.pay-row{display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-variant-numeric:tabular-nums}
+.pay-row span:first-child{color:var(--muted)}
+.pay-row b{font-weight:750}
+.pay-next{margin-top:10px;background:var(--hold-bg);color:var(--hold);border-radius:4px;padding:10px 12px;font-weight:600}
+
+/* Trust strip and checks */
+.check-ico{flex:none;width:28px;height:28px;border-radius:50%;background:var(--danfo);display:grid;place-items:center}
+.check-ico svg{width:16px;height:16px;fill:none;stroke:var(--asphalt);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.trust{padding:56px 0;border-bottom:1px solid var(--line)}
+.trust-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:28px 56px;align-items:center}
+.trust h2{font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:850}
+.trust-copy p{color:var(--muted);margin:12px 0 16px;max-width:52ch}
+.text-link{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--danfo);text-decoration-thickness:3px;text-underline-offset:5px}
+.check-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check-list li{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px}
+.check-list b{display:block;font-weight:760}
+.check-list span:not(.check-ico){display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
+@media (max-width:860px){.trust-wrap{grid-template-columns:1fr}}
+@media (max-width:480px){.check-list{grid-template-columns:1fr}}
+
+/* How we work page */
+.check-cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.check-cards li{border:1px solid var(--line);border-radius:6px;padding:20px;background:var(--paper)}
+.check-cards .check-ico{margin-bottom:14px}
+.check-cards h3{font-size:1.12rem;font-weight:780;font-stretch:110%;margin-bottom:8px}
+.check-cards p{color:var(--muted);font-size:.95rem}
+@media (max-width:980px){.check-cards{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.check-cards{grid-template-columns:1fr}}
+.process{list-style:none;margin:0;padding:0;counter-reset:proc;max-width:760px}
+.process li{counter-increment:proc;position:relative;padding:0 0 40px 84px}
+.process li::before{content:counter(proc);position:absolute;left:0;top:-4px;width:56px;height:56px;border-radius:50%;background:var(--asphalt);color:var(--danfo);display:grid;place-items:center;font-weight:900;font-stretch:125%;font-size:1.6rem}
+.process li::after{content:"";position:absolute;left:26px;top:60px;bottom:6px;width:4px;background:repeating-linear-gradient(180deg,var(--danfo) 0 14px,transparent 14px 24px)}
+.process li:last-child{padding-bottom:0}
+.process li:last-child::after{display:none}
+.process h3{font-size:1.35rem;font-weight:800;font-stretch:115%;margin:8px 0 8px}
+.process p{color:var(--muted);max-width:60ch}
+.process-links{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:10px}
+.process-links a{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--danfo);text-decoration-thickness:3px;text-underline-offset:5px}
+@media (max-width:520px){.process li{padding-left:68px}.process li::before{width:48px;height:48px;font-size:1.35rem}.process li::after{left:22px;top:52px}}
+</style>
+<!-- Your settings live in config.js. The values below are only used if config.js is missing. -->
+<script src="config.js"></script>
+<script>
+window.CONFIG = window.CONFIG || {
+  businessName: 'MooEmma Motors',
+  logoUrl: '',            // e.g. 'logo.png' once you add your logo to this folder
+  sheetApiUrl: '',        // paste your Google Apps Script web app URL here
+  whatsappNumber: '2348000000000', // international format, no + or spaces
+  phoneDisplay: '+234 800 000 0000',
+  email: 'hello@mooemmamotors.com',
+  city: 'Lagos, Nigeria',
+  siteUrl: '',            // optional: your live address, e.g. 'https://mooemmamotors.com'
+
+  // When each instalment is due, by number of instalments in a plan.
+  // A plan of 60/40 uses the "2" list: 60% before we buy, 40% when the car arrives.
+  paymentSchedule: {
+    1: ['Before we buy the car'],
+    2: ['Before we buy the car', 'When the car arrives in Nigeria'],
+    3: ['Before we buy the car', 'When the car is shipped', 'Before delivery'],
+    4: ['Before we buy the car', 'When the car is shipped', 'When the car arrives in Nigeria', 'Before delivery']
+  }
+};
+/* MooEmma Motors: helpers shared by every page */
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const naira = n => n ? new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0}).format(n) : '';
+const km = n => n ? new Intl.NumberFormat('en-NG').format(n) + ' km' : '';
+const CAR_SVG = '<svg viewBox="0 0 120 48" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" d="M6 34c0-5 3-8 10-9l18-3 13-10c3-2 6-3 10-3h20c5 0 9 2 12 5l9 8 12 2c5 1 7 4 7 8v5H6Z"/><circle cx="31" cy="39" r="7" fill="#D8DCE1" stroke="currentColor" stroke-width="2.5"/><circle cx="92" cy="39" r="7" fill="#D8DCE1" stroke="currentColor" stroke-width="2.5"/></svg>';
+
+
+/* ---------- Header, footer and settings (same on every page) ---------- */
+const WA_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.5.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.6.6-.9 1.4-.9 2.2.1 1 .5 2 1.1 2.8 1.2 1.7 2.7 3 4.6 3.8 1.6.7 2.3.7 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>';
+
+function renderChrome(){
+  const page = document.body.dataset.page || '';
+  const home = page === 'home' ? '' : 'index.html';
+  const links = [
+    ['cars', `${home}#cars`, 'Cars'],
+    ['why', `${home}#why`, 'Why us'],
+    ['how', 'how-we-work.html', 'How we work'],
+    ['services', `${home}#services`, 'Send us a car'],
+    ['about', 'about.html', 'About'],
+    ['track', 'track.html', 'Track your car']
+  ];
+  const nav = links.map(([k, href, label]) =>
+    `<a href="${href}"${k === page ? ' aria-current="page"' : ''}>${label}</a>`).join('');
+  const header = $('#siteHeader');
+  if (header) header.innerHTML = `<div class="wrap">
+      <a class="brand" href="${home || '#top'}" aria-label="${esc(CONFIG.businessName)} home">${
+        CONFIG.logoUrl ? `<img src="${esc(CONFIG.logoUrl)}" alt="${esc(CONFIG.businessName)}">`
+        : `<span class="brand-mark" aria-hidden="true">${esc(CONFIG.businessName.charAt(0))}</span>${esc(CONFIG.businessName)}`}</a>
+      <nav class="nav" id="mainNav" aria-label="Main">${nav}</nav>
+      <a class="btn btn-wa btn-sm wa-head" aria-label="Chat on WhatsApp" data-wa="general" href="#" target="_blank" rel="noopener">${WA_ICON}<span><span class="hide-sm">Chat on </span>WhatsApp</span></a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    </div>`;
+  const footer = $('#siteFooter');
+  if (footer) footer.innerHTML = `<div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">${esc(CONFIG.businessName)}</p>
+          <p style="margin-top:6px">${esc(CONFIG.city)}</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer">${nav}</nav>
+        <div>
+          <p><a data-wa="general" href="#" target="_blank" rel="noopener">WhatsApp us</a></p>
+          <p><a href="tel:${esc(CONFIG.phoneDisplay.replace(/[^\d+]/g,''))}">${esc(CONFIG.phoneDisplay)}</a></p>
+          <p><a href="mailto:${esc(CONFIG.email)}">${esc(CONFIG.email)}</a></p>
+        </div>
+      </div>
+      <p class="small">Prices shown are estimates until we confirm them with you. © ${new Date().getFullYear()} ${esc(CONFIG.businessName)}.</p>
+    </div>`;
+
+  const btn = $('.menu-btn');
+  btn?.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', open);
+    $('#mainNav').classList.toggle('open', open);
+  });
+  $$('#mainNav a').forEach(a => a.addEventListener('click', () => {
+    btn?.setAttribute('aria-expanded', 'false'); $('#mainNav').classList.remove('open');
+  }));
+  $$('[data-biz]').forEach(el => el.textContent = CONFIG.businessName);
+  $$('[data-wa="general"]').forEach(a => a.href = waLink(`Hi ${CONFIG.businessName}, I'd like to ask about your cars.`));
+}
+function waLink(text){ return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`; }
+function siteBase(){ return (CONFIG.siteUrl || location.origin + location.pathname.replace(/[^/]*$/, '')).replace(/\/?$/, '/'); }
+function carUrl(car){ return siteBase() + '#car=' + encodeURIComponent(car.id); }
+
+function imgSrc(u, w = 1400){
+  const isDrive = /drive\.google\.com|docs\.google\.com/.test(u);
+  if (!isDrive) return u;
+  const m = u.match(/\/d\/([\w-]{10,})/) || u.match(/[?&]id=([\w-]{10,})/);
+  return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w${w}` : u;
+}
+function toast(msg){
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+
+document.addEventListener('DOMContentLoaded', renderChrome);
+
+/* ---------- Payment plans ---------- */
+// "100, 60/40, 50/30/20" -> [[100],[60,40],[50,30,20]]. Plans that don't add up to 100 are ignored.
+function parsePlans(v){
+  return String(v ?? '').split(/[,;]+/).map(p => p.trim()).filter(Boolean)
+    .map(p => p.split('/').map(x => Number(String(x).replace('%','').trim())))
+    .filter(parts => parts.length && parts.every(n => Number.isFinite(n) && n > 0) && parts.reduce((a,b) => a + b, 0) === 100);
+}
+function planLabel(parts){
+  return parts.length === 1 ? 'Full payment' : parts.map(n => n + '%').join(' / ');
+}
+function planDueDates(count){
+  const s = (CONFIG.paymentSchedule || {})[count];
+  return Array.from({length: count}, (_, i) => (s && s[i]) || `Instalment ${i + 1}`);
+}
+function planBreakdown(parts, price){
+  const due = planDueDates(parts.length);
+  let paid = 0;
+  return parts.map((pct, i) => {
+    // last instalment takes the remainder so totals always match the price
+    const amount = price ? (i === parts.length - 1 ? price - paid : Math.round(price * pct / 100)) : null;
+    if (amount) paid += amount;
+    return { pct, amount, due: due[i] };
+  });
+}
+</script>
+</head>
+<body data-page="home">
+
+<header class="site-header on-dark" id="siteHeader"></header>
+
+<main id="top">
+  <section class="hero on-dark">
+    <div class="wrap">
+      <h1>Pick the car. We bring it home.</h1>
+      <p class="lede">Clean, accident-free cars, checked by our own team in the US and brought to your door in Nigeria. Choose one of ours or send us a car you found. Instalment plans are available on selected cars.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#cars">Browse cars</a>
+        <button class="btn btn-line-dark" type="button" data-open="link">I found a car online</button>
+      </div>
+
+      <div class="route-box">
+        <svg class="route-car" viewBox="0 0 120 48" aria-hidden="true"><path fill="currentColor" d="M6 34c0-5 3-8 10-9l18-3 13-10c3-2 6-3 10-3h20c5 0 9 2 12 5l9 8 12 2c5 1 7 4 7 8v5H6Z"/><circle cx="31" cy="39" r="7" fill="#1C2026" stroke="currentColor" stroke-width="3"/><circle cx="92" cy="39" r="7" fill="#1C2026" stroke="currentColor" stroke-width="3"/></svg>
+        <ol class="route" aria-label="How your car gets to you">
+          <li>US validation<span>Checked, then bought</span></li>
+          <li>Shipping<span>RoRo or container</span></li>
+          <li>Customs<span>Cleared and duty paid</span></li>
+          <li>Final checks<span>Inspected, papers ready</span></li>
+          <li>Your door<span>Pick up or delivered</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" aria-labelledby="trust-title">
+    <div class="wrap trust-wrap">
+      <div class="trust-copy">
+        <h2 id="trust-title">We don't buy blindly</h2>
+        <p>With tokunbo, everything comes down to trust. Every car we bring in, from our listings or from a link you send us, is checked by our own team in the US before any money changes hands.</p>
+        <a class="text-link" href="how-we-work.html">See how our US validation works</a>
+      </div>
+      <ul class="check-list">
+        <li><span class="check-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>History report checked</b><span>Accidents, owners and mileage</span></div></li>
+        <li><span class="check-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Title verified</b><span>Clean, and matches the car</span></div></li>
+        <li><span class="check-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Inspected by our US team</b><span>Structure, condition and paperwork</span></div></li>
+        <li><span class="check-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div><b>Seller vetted</b><span>Genuine sellers only</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section why" id="why" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="why-head">
+        <h2 id="why-title">A short wait for a car you can trust</h2>
+        <div>
+          <p>Buying through us takes a few more weeks than buying off a lot. In return, you get a clean tokunbo car with a known history, at a price we believe beats most dealers. You can spread the cost, and you always know where your car is.</p>
+          <p class="why-links"><a href="about.html">Read our story</a><a href="track.html">How tracking works</a></p>
+        </div>
+      </div>
+      <div class="compare" role="table" aria-label="A typical Nigerian-used car compared with buying through us">
+        <div class="compare-row compare-top" role="row">
+          <span role="columnheader"><span class="visually-hidden">What you get</span></span>
+          <span role="columnheader" class="them">A typical Nigerian-used car</span>
+          <span role="columnheader" class="ours"><span data-biz>MooEmma Motors</span> tokunbo</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span role="rowheader">History</span>
+          <span role="cell" class="them">Often unknown. Mileage and past repairs are hard to check.</span>
+          <span role="cell" class="ours">Clean US title with no accident record, and a history report before you pay.</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span role="rowheader">Checks</span>
+          <span role="cell" class="them">Up to you, and often only after you've paid.</span>
+          <span role="cell" class="ours">Our US team inspects the car, title and seller before any money changes hands.</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span role="rowheader">Where it's been</span>
+          <span role="cell" class="them">Our roads, which are hard on suspension and engines, often with servicing skipped.</span>
+          <span role="cell" class="ours">Used abroad and shipped straight to you. You're its first owner in Nigeria.</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span role="rowheader">Price</span>
+          <span role="cell" class="them">Dealer markups stacked on top.</span>
+          <span role="cell" class="ours">Bought directly in the US, so we can offer a price we believe beats most dealers.</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span role="rowheader">Paying</span>
+          <span role="cell" class="them">Usually everything upfront.</span>
+          <span role="cell" class="ours">Instalment plans on selected cars, paid at set stages of the journey.</span>
+        </div>
+        <div class="compare-row" role="row">
+          <span role="rowheader">Time</span>
+          <span role="cell" class="them">Drive it away today.</span>
+          <span role="cell" class="ours">About 6 to 8 weeks, with a tracking code from purchase to your door.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cars" aria-labelledby="cars-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 id="cars-title">Cars you can request</h2>
+          <p>Every car we list has been through our US validation checks: clean title, no accident history, verified seller. Request one and we'll confirm the final price, payment plan and delivery before anything is bought.</p>
+        </div>
+      </div>
+
+      <div class="demo-note" id="demoNote" hidden>
+        <strong>You're seeing sample cars.</strong> Add your Google Sheet link in config.js to show your real listings.
+      </div>
+
+      <form class="filters" id="filters" role="search" aria-label="Filter cars" onsubmit="return false">
+        <div class="field f-search">
+          <label for="q">Search</label>
+          <input id="q" type="search" placeholder="Make, model or car ID" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="fMake">Make</label>
+          <select id="fMake"><option value="">All makes</option></select>
+        </div>
+        <div class="field">
+          <label for="fBody">Body type</label>
+          <select id="fBody"><option value="">All types</option></select>
+        </div>
+        <div class="field f-sort">
+          <label for="fSort">Sort by</label>
+          <select id="fSort">
+            <option value="rec">Recommended</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="year-desc">Year: newest first</option>
+            <option value="year-asc">Year: oldest first</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fMin">Min price</label>
+          <div class="money"><span aria-hidden="true">₦</span><input id="fMin" type="text" inputmode="decimal" autocomplete="off" placeholder="No minimum" aria-describedby="priceHint"></div>
+        </div>
+        <div class="field">
+          <label for="fMax">Max price</label>
+          <div class="money"><span aria-hidden="true">₦</span><input id="fMax" type="text" inputmode="decimal" autocomplete="off" placeholder="No maximum" aria-describedby="priceHint"></div>
+        </div>
+        <div class="field">
+          <label for="fYearFrom">Year from</label>
+          <select id="fYearFrom"><option value="">Any year</option></select>
+        </div>
+        <div class="field">
+          <label for="fYearTo">Year to</label>
+          <select id="fYearTo"><option value="">Any year</option></select>
+        </div>
+        <div class="field f-clear">
+          <button class="btn btn-line" type="button" id="clearFiltersBtn">Clear filters</button>
+        </div>
+        <p class="filter-hint" id="priceHint">Type amounts in full or short, like 15000000, 15m or 500k.</p>
+      </form>
+
+      <div class="results-bar">
+        <p id="resultCount" aria-live="polite">Loading cars…</p>
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="fPlan"> Instalments available</label>
+          <label class="check"><input type="checkbox" id="fAvail"> Available only</label>
+        </div>
+      </div>
+
+      <div class="grid" id="grid" aria-busy="true">
+        <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+      </div>
+      <div class="pane-foot" id="paneFoot" hidden>
+        <p id="paneHint" aria-live="polite"></p>
+        <button class="btn btn-line" type="button" id="paneToggle"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="band services" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <h2 id="services-title">Can't see your car here?</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Found a car online? Send us the link.</h3>
+          <p>Spotted a car on a US dealer site or marketplace? Send us the link. Our US team checks the seller and the car and confirms we can bring it in, then we send you a full quote. Once you pay, we buy it, ship it, and you can track it to your door.</p>
+          <button class="btn btn-dark" type="button" data-open="link">Send a car link</button>
+        </div>
+        <div class="service-card">
+          <h3>Tell us what you want</h3>
+          <p>Give us the make, model, years and budget. We'll search the US market and send you options with full prices before you pay anything.</p>
+          <button class="btn btn-dark" type="button" data-open="custom">Request a specific car</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2 id="how-title">How buying works</h2>
+          <p>You decide before we spend a naira on your car. Most cars reach you about 6 to 8 weeks after your first payment.</p>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><h3>Send a request</h3><p>Pick one of our cars, describe the one you want, or send us a link to a car you found. Requests are free.</p></li>
+        <li><h3>Our US team checks it</h3><p>We inspect the car, verify the title and history, and vet the seller. Then we send the full price, payment plan and delivery cost.</p></li>
+        <li><h3>Pay in full or in instalments</h3><p>Your first payment lets us buy the car. On instalment plans, the rest is due at set stages.</p></li>
+        <li><h3>Track every stage</h3><p>We handle the purchase, towing to the US port, shipping and customs. Your tracking code shows where your car is the whole way.</p></li>
+        <li><h3>Receive your car</h3><p>Pick it up in Lagos or have it delivered to your location. Any balance is paid before handover.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title" style="padding-top:0">
+    <div class="wrap faq-wrap">
+      <div>
+        <h2 id="faq-title" style="font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800">Questions buyers ask</h2>
+        <p style="color:var(--muted);margin-top:10px;max-width:40ch">Can't find your answer? Message us on WhatsApp and we'll reply the same day.</p>
+      </div>
+      <div class="faq">
+        <details><summary>Are the cars accident-free?</summary><p>Yes. We only bring in cars with a clean US title and no accident record. You get the history report to check for yourself before you pay.</p></details>
+        <details><summary>Who checks the car before you buy it?</summary><p>Our own team in the US. They inspect the vehicle, check its history report, verify the title and vet the seller before any money changes hands. If a car doesn't pass, we don't buy it. <a href="how-we-work.html">See how our validation works</a>.</p></details>
+        <details><summary>I found a car online. Can you bring it in for me?</summary><p>Yes. Send us the link. We confirm the seller is genuine and that we can import the car, then send you a quote covering the purchase, shipping, customs and delivery. Once you pay, we start, and you can track the car the same way as our own listings.</p></details>
+        <details><summary>How do instalment plans work?</summary><p>Each car shows the plans we accept, such as 60% / 40%. The first part is paid before we buy the car. The rest is due at set stages, for example when the car arrives in Nigeria. The full amount is settled before handover.</p></details>
+        <details><summary>Can you deliver to my city?</summary><p>Yes. You can pick up your car in Lagos, or we can deliver it to your location. We include the delivery cost in your quote.</p></details>
+        <details><summary>Do I pay anything to send a request?</summary><p>No. A request just tells us you're interested. We confirm everything with you before asking for any payment.</p></details>
+        <details><summary>How long until I get my car?</summary><p>Usually about 6 to 8 weeks from your first payment. US paperwork or port delays can add time, and you'll see any delay on your tracking page.</p></details>
+        <details><summary>How do I follow my car's progress?</summary><p>Once your first payment is confirmed, we send you a tracking code. Enter it on the <a href="track.html">Track your car</a> page to see each stage, your payments and our latest updates.</p></details>
+        <details><summary>What if the final cost changes?</summary><p>Exchange rates and customs charges can move while a car is on the way. We'll explain exactly how price changes are handled when we confirm your car, before you pay.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer on-dark" id="siteFooter"></footer>
+
+<!-- Car details -->
+<dialog id="carDialog" aria-labelledby="carTitle">
+  <button class="dlg-close" type="button" data-close aria-label="Close">×</button>
+  <div id="carBody"></div>
+</dialog>
+
+<!-- Request form -->
+<dialog id="requestDialog" aria-labelledby="reqTitle">
+  <button class="dlg-close" type="button" data-close aria-label="Close">×</button>
+  <div id="reqForm" class="req">
+    <h2 id="reqTitle">Request a car</h2>
+    <p class="req-intro" id="reqIntro"></p>
+    <div id="reqSummary"></div>
+    <form id="requestForm" class="form-grid">
+      <div class="full field" data-modes="link">
+        <label for="fLink">Link to the car *</label>
+        <input id="fLink" name="listingLink" type="url" data-req="link" placeholder="https://">
+      </div>
+      <div class="full field" data-modes="custom link">
+        <label for="fWant" id="fWantLabel">Car you want *</label>
+        <input id="fWant" name="wantedCar" data-req="custom" placeholder="For example, Toyota Highlander">
+      </div>
+      <div class="field" data-modes="link">
+        <label for="fListed">Listed price (USD)</label>
+        <input id="fListed" name="listedPrice" inputmode="decimal" placeholder="For example, 14,500">
+      </div>
+      <div class="field" data-modes="custom">
+        <label for="fYears">Years</label>
+        <input id="fYears" name="years" placeholder="For example, 2016 to 2019">
+      </div>
+      <div class="field" data-modes="custom">
+        <label for="fBudget">Budget (₦)</label>
+        <input id="fBudget" name="budget" inputmode="numeric" placeholder="For example, 25,000,000">
+      </div>
+      <div class="full field" data-modes="car" id="planField">
+        <label for="fPlanSel">Payment plan</label>
+        <select id="fPlanSel" name="paymentPlan"></select>
+        <p class="hint" id="planHint"></p>
+      </div>
+      <div class="field">
+        <label for="fName">Full name *</label>
+        <input id="fName" name="name" required autocomplete="name">
+      </div>
+      <div class="field">
+        <label for="fPhone">WhatsApp number *</label>
+        <input id="fPhone" name="phone" required type="tel" autocomplete="tel" pattern="[0-9+ \(\)\-]{7,20}" placeholder="0803 000 0000">
+      </div>
+      <div class="field">
+        <label for="fEmail" id="fEmailLabel">Email</label>
+        <input id="fEmail" name="email" type="email" autocomplete="email" data-req="car custom link">
+      </div>
+      <div class="field">
+        <label for="fCity">City or state *</label>
+        <input id="fCity" name="city" required autocomplete="address-level2" placeholder="For example, Abuja">
+      </div>
+      <div class="full field">
+        <label for="fDelivery">Delivery</label>
+        <select id="fDelivery" name="delivery">
+          <option>Pick up in Lagos</option>
+          <option>Deliver to my location</option>
+        </select>
+      </div>
+      <div class="full field" id="addrField" hidden>
+        <label for="fAddr">Delivery address *</label>
+        <textarea id="fAddr" name="deliveryAddress" rows="2" placeholder="Street, area, city and state" disabled></textarea>
+        <p class="hint">We'll include the delivery cost in your quote.</p>
+      </div>
+      <div class="field">
+        <label for="fContact">Best way to reach you</label>
+        <select id="fContact" name="contactVia">
+          <option>WhatsApp</option><option>Phone call</option><option>Email</option>
+        </select>
+      </div>
+      <div class="full field">
+        <label for="fNotes">Anything else?</label>
+        <textarea id="fNotes" name="notes" placeholder="Colour preference, questions, when you need the car"></textarea>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="consent full"><input type="checkbox" required id="fConsent"> <span>I understand this is a request, not a payment. <span data-biz></span> will confirm the price before asking me to pay.</span></label>
+      <p class="form-status full" id="formStatus" role="status"></p>
+      <div class="form-actions full">
+        <button class="btn btn-primary" type="submit" id="submitBtn">Send request</button>
+        <button class="btn btn-line" type="button" data-close>Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div id="reqSuccess" class="success" hidden></div>
+</dialog>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+/* Sample cars show only when no Google Sheet is connected. */
+const SAMPLE_CARS = [
+  {id:'CAR-001',make:'Toyota',model:'Camry',year:2018,trim:'SE',bodyType:'Sedan',transmission:'Automatic',fuel:'Petrol',mileage:76000,colour:'Silver',condition:'Clean title. No accident record. Two previous owners, regular dealer servicing.',price:24500000,priceNote:'Cleared and ready in Lagos',paymentPlans:'100, 60/40',readyIn:'6-8',requestBy:'',location:'Dealer in Houston, Texas',images:[],description:'Popular, cheap to maintain and easy to resell.',status:'Available',featured:'Yes'},
+  {id:'CAR-002',make:'Lexus',model:'RX 350',year:2017,trim:'AWD',bodyType:'SUV',transmission:'Automatic',fuel:'Petrol',mileage:88000,colour:'Black',condition:'Clean title. No accident record. One previous owner.',price:39000000,priceNote:'Cleared and ready in Lagos',paymentPlans:'100, 70/30, 50/30/20',readyIn:'6-8',requestBy:'',location:'Dealer in Atlanta, Georgia',images:[],description:'Leather interior, navigation, full service history.',status:'Available',featured:'Yes'},
+  {id:'CAR-003',make:'Toyota',model:'Corolla',year:2019,trim:'LE',bodyType:'Sedan',transmission:'Automatic',fuel:'Petrol',mileage:62000,colour:'White',condition:'Clean title. No accident record.',price:19800000,priceNote:'Cleared and ready in Lagos',paymentPlans:'100, 50/50',readyIn:'6-8',requestBy:'',location:'Dealer in Newark, New Jersey',images:[],description:'Economical and easy to maintain.',status:'Available',featured:''},
+  {id:'CAR-004',make:'Toyota',model:'Highlander',year:2018,trim:'XLE',bodyType:'SUV',transmission:'Automatic',fuel:'Petrol',mileage:94000,colour:'Grey',condition:'Clean title. No accident record. Third-row seating.',price:35500000,priceNote:'Cleared and ready in Lagos',paymentPlans:'100, 60/40',readyIn:'7-9',requestBy:'',location:'Dealer in Dallas, Texas',images:[],description:'Seats seven. Ideal family car.',status:'Available',featured:''},
+  {id:'CAR-005',make:'Honda',model:'Accord',year:2017,trim:'EX-L',bodyType:'Sedan',transmission:'Automatic',fuel:'Petrol',mileage:91000,colour:'Blue',condition:'Clean title. No accident record.',price:18900000,priceNote:'Cleared and ready in Lagos',paymentPlans:'100',readyIn:'',requestBy:'',location:'Arrived in Lagos',images:[],description:'Already in Nigeria and cleared. Ready soon.',status:'Available',featured:''},
+  {id:'CAR-006',make:'Lexus',model:'ES 350',year:2019,trim:'Luxury',bodyType:'Sedan',transmission:'Automatic',fuel:'Petrol',mileage:54000,colour:'Pearl white',condition:'Clean title. No accident record. One previous owner.',price:44000000,priceNote:'Cleared and ready in Lagos',paymentPlans:'100, 60/40',readyIn:'6-8',requestBy:'',location:'At Savannah port',images:[],description:'Low mileage. On its way to Lagos.',status:'Reserved',featured:''},
+  {id:'CAR-007',make:'Toyota',model:'Sienna',year:2016,trim:'LE',bodyType:'Minivan',transmission:'Automatic',fuel:'Petrol',mileage:112000,colour:'Brown',condition:'Clean title. No accident record.',price:21000000,priceNote:'Cleared and ready in Lagos',paymentPlans:'100',readyIn:'',requestBy:'',location:'Lagos',images:[],description:'Delivered to a customer in Ibadan.',status:'Sold',featured:''}
+];
+
+const state = { cars: [], demo: false, current: null, mode: 'car' };
+
+/* ---------- Data ---------- */
+function normalizeCar(c){
+  const num = v => { const n = Number(String(v ?? '').replace(/[^\d.]/g,'')); return Number.isFinite(n) && n > 0 ? n : null; };
+  const s = String(c.status || 'Available').trim().toLowerCase();
+  const status = s.startsWith('res') ? 'reserved' : s.startsWith('sold') ? 'sold' : 'available';
+  const images = (Array.isArray(c.images) ? c.images : String(c.images || '').split(/[\n,]+/)).map(x => String(x).trim()).filter(Boolean);
+  const year = num(c.year);
+  let requestBy = null;
+  if (c.requestBy){ const d = new Date(String(c.requestBy).slice(0,10) + 'T23:59:59'); if (!isNaN(d)) requestBy = d; }
+  let plans = parsePlans(c.paymentPlans);
+  if (!plans.length) plans = [[100]];
+  const firsts = plans.filter(p => p.length > 1).map(p => p[0]);
+  return {
+    ...c, id: String(c.id || '').trim(), year, price: num(c.price), mileage: num(c.mileage), status, images, requestBy, plans,
+    minUpfront: firsts.length ? Math.min(...firsts) : null,
+    readyIn: String(c.readyIn || '').trim().replace(/\s*-\s*/,'–'),
+    featured: /^(y|yes|true|1)$/i.test(String(c.featured || '').trim()),
+    title: [year, c.make, c.model].filter(Boolean).join(' ')
+  };
+}
+async function loadCars(){
+  const grid = $('#grid');
+  if (!CONFIG.sheetApiUrl){
+    state.demo = true;
+    state.cars = SAMPLE_CARS.map(normalizeCar);
+    $('#demoNote').hidden = false;
+  } else {
+    try {
+      const res = await fetch(CONFIG.sheetApiUrl + (CONFIG.sheetApiUrl.includes('?') ? '&' : '?') + 't=' + Date.now());
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || 'Sheet error');
+      state.cars = (data.cars || []).map(normalizeCar).filter(c => c.id);
+    } catch (err){
+      console.error(err);
+      grid.setAttribute('aria-busy','false');
+      $('#resultCount').textContent = '';
+      grid.innerHTML = `<div class="empty" style="grid-column:1/-1"><h3>The car list didn't load</h3><p>Check your connection and refresh the page. You can also message us on WhatsApp to see what's available today.</p><div class="actions"><button class="btn btn-dark" type="button" onclick="location.reload()">Refresh the page</button><a class="btn btn-wa" href="${waLink(`Hi ${CONFIG.businessName}, which cars are available now?`)}" target="_blank" rel="noopener">Ask on WhatsApp</a></div></div>`;
+      return;
+    }
+  }
+  buildFilterOptions();
+  applyFilters();
+  openFromHash();
+}
+
+/* ---------- Filters ---------- */
+function buildFilterOptions(){
+  const fill = (sel, values) => {
+    [...new Set(values.filter(Boolean))].sort().forEach(v => sel.insertAdjacentHTML('beforeend', `<option>${esc(v)}</option>`));
+  };
+  fill($('#fMake'), state.cars.map(c => c.make));
+  fill($('#fBody'), state.cars.map(c => c.bodyType));
+  const years = [...new Set(state.cars.map(c => c.year).filter(Boolean))].sort((a,b) => a - b);
+  years.forEach(y => $('#fYearFrom').insertAdjacentHTML('beforeend', `<option>${y}</option>`));
+  [...years].reverse().forEach(y => $('#fYearTo').insertAdjacentHTML('beforeend', `<option>${y}</option>`));
+}
+
+// "15000000", "15,000,000", "₦15m", "15.5m", "500k" -> a number of naira. Returns null if blank, NaN if not understood.
+function parseMoney(v){
+  const s = String(v || '').toLowerCase().replace(/[₦,\s]/g, '').replace(/naira|ngn/g, '');
+  if (!s) return null;
+  const m = s.match(/^(\d+(?:\.\d+)?)(k|m|million|b)?$/);
+  if (!m) return NaN;
+  const mult = {k: 1e3, m: 1e6, million: 1e6, b: 1e9}[m[2]] || 1;
+  return Math.round(parseFloat(m[1]) * mult);
+}
+function priceInput(id){
+  const el = $(id), n = parseMoney(el.value);
+  el.closest('.money').classList.toggle('bad', Number.isNaN(n));
+  el.setAttribute('aria-invalid', Number.isNaN(n));
+  return Number.isFinite(n) ? n : null;
+}
+function applyFilters(){
+  const q = $('#q').value.trim().toLowerCase();
+  const make = $('#fMake').value, body = $('#fBody').value;
+  let min = priceInput('#fMin'), max = priceInput('#fMax');
+  if (min !== null && max !== null && min > max) [min, max] = [max, min];
+  let yFrom = Number($('#fYearFrom').value) || null, yTo = Number($('#fYearTo').value) || null;
+  if (yFrom && yTo && yFrom > yTo) [yFrom, yTo] = [yTo, yFrom];
+  const availOnly = $('#fAvail').checked, planOnly = $('#fPlan').checked;
+  const sort = $('#fSort').value;
+  const rank = {available:0, reserved:1, sold:2};
+  let list = state.cars.filter(c =>
+    (!q || [c.title,c.trim,c.make,c.model,c.bodyType,c.colour,c.id,c.location].join(' ').toLowerCase().includes(q)) &&
+    (!make || c.make === make) && (!body || c.bodyType === body) &&
+    (min === null || (c.price && c.price >= min)) && (max === null || (c.price && c.price <= max)) &&
+    (!yFrom || (c.year && c.year >= yFrom)) && (!yTo || (c.year && c.year <= yTo)) && (!availOnly || c.status === 'available') &&
+    (!planOnly || c.minUpfront !== null));
+  list.sort((a,b) => {
+    if (sort === 'price-asc') return (a.price ?? Infinity) - (b.price ?? Infinity);
+    if (sort === 'price-desc') return (b.price ?? 0) - (a.price ?? 0);
+    if (sort === 'year-desc') return (b.year ?? 0) - (a.year ?? 0);
+    if (sort === 'year-asc') return (a.year ?? Infinity) - (b.year ?? Infinity);
+    return rank[a.status] - rank[b.status] || (b.featured - a.featured) || (b.year ?? 0) - (a.year ?? 0);
+  });
+  shownRows = PANE_ROWS;
+  renderGrid(list);
+  layoutPane();
+}
+
+/* ---------- Car list: shows 5 rows, then "Show more cars" adds 5 rows at a time ---------- */
+const PANE_ROWS = 5;   // rows of cars shown at first, and added with each "Show more"
+let shownRows = PANE_ROWS;
+function layoutPane(){
+  const grid = $('#grid'), foot = $('#paneFoot'), btn = $('#paneToggle');
+  const cards = $$('.card', grid);
+  cards.forEach(c => c.hidden = false);
+  if (!cards.length){ foot.hidden = true; return; }
+  const top0 = cards[0].offsetTop;
+  const cols = cards.filter(c => c.offsetTop === top0).length;
+  const total = cards.length, limit = PANE_ROWS * cols;
+  if (total <= limit){ foot.hidden = true; return; }
+  const shown = Math.min(total, shownRows * cols);
+  cards.slice(shown).forEach(c => c.hidden = true);
+  foot.hidden = false;
+  $('#paneHint').textContent = shown < total ? `Showing ${shown} of ${total} cars` : `Showing all ${total} cars`;
+  btn.textContent = shown < total ? `Show ${Math.min(limit, total - shown)} more cars` : 'Show fewer cars';
+  btn.dataset.action = shown < total ? 'more' : 'fewer';
+}
+function clearFilters(){
+  $('#filters').reset(); $('#fAvail').checked = false; $('#fPlan').checked = false; applyFilters();
+}
+
+/* ---------- Rendering ---------- */
+/* ---------- Photo slider on each car card ---------- */
+const SLIDE_SECONDS = 4;   // how long each photo shows before the next one slides in
+const SLIDE_MS = SLIDE_SECONDS * 1000;
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sliders = new Map();
+let sliderObserver = null;
+
+function sliderHTML(car){
+  const n = car.images.length;
+  if (n < 2) return mediaHTML(car, 800);
+  const fallback = "this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',innerHTML:CAR_SVG+'<span>Photo unavailable</span>'}))";
+  const imgs = car.images.map((u, i) => `<img ${i === 0 ? 'src' : 'data-src'}="${esc(imgSrc(u, 800))}" alt="${esc(car.title)}, photo ${i + 1} of ${n}"${i === 0 ? ' class="on"' : ' aria-hidden="true"'} onerror="${fallback}">`).join('');
+  return `<div class="slider" data-i="0" data-n="${n}">${imgs}
+    <button type="button" class="slide-btn prev" data-slide="-1" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" class="slide-btn next" data-slide="1" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div class="dots" aria-hidden="true">${car.images.map((_, i) => `<i${i === 0 ? ' class="on"' : ''}></i>`).join('')}</div>
+  </div>`;
+}
+function loadImg(img){
+  if (img && img.dataset.src){ img.src = img.dataset.src; delete img.dataset.src; }
+}
+function goSlide(sl, step, manual){
+  const n = +sl.dataset.n, i = (((+sl.dataset.i + step) % n) + n) % n;
+  const imgs = $$('img', sl);
+  loadImg(imgs[i]); loadImg(imgs[(i + 1) % n]);   // load this photo and get the next one ready
+  imgs.forEach((im, j) => { im.classList.toggle('on', j === i); j === i ? im.removeAttribute('aria-hidden') : im.setAttribute('aria-hidden', 'true'); });
+  $$('.dots i', sl).forEach((d, j) => d.classList.toggle('on', j === i));
+  sl.dataset.i = i;
+  const st = sliders.get(sl);
+  if (st) st.nextAt = Date.now() + SLIDE_MS * (manual ? 2 : 1);   // wait longer after the buyer moves it themselves
+}
+function setupSliders(){
+  sliders.clear();
+  sliderObserver?.disconnect();
+  sliderObserver = new IntersectionObserver(entries => entries.forEach(en => {
+    const st = sliders.get(en.target);
+    if (!st) return;
+    st.visible = en.isIntersecting;
+    if (en.isIntersecting) loadImg($$('img', en.target)[1]);
+  }), { threshold: 0.4 });
+  $$('#grid .slider').forEach((sl, k) => {
+    sliders.set(sl, { visible: false, paused: false, nextAt: Date.now() + SLIDE_MS + (k % 3) * 1100 });
+    sliderObserver.observe(sl);
+    const card = sl.closest('.card'), st = sliders.get(sl);
+    card.addEventListener('mouseenter', () => st.paused = true);
+    card.addEventListener('mouseleave', () => st.paused = false);
+    card.addEventListener('focusin', () => st.paused = true);
+    card.addEventListener('focusout', () => st.paused = false);
+    // Swipe left or right on the photo
+    let sx = null, sy = 0;
+    card.addEventListener('pointerdown', e => {
+      const r = sl.getBoundingClientRect();
+      sx = (e.clientY >= r.top && e.clientY <= r.bottom) ? e.clientX : null; sy = e.clientY;
+    });
+    card.addEventListener('pointerup', e => {
+      if (sx === null) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){ goSlide(sl, dx < 0 ? 1 : -1, true); card.dataset.swiped = Date.now(); }
+      sx = null;
+    });
+  });
+}
+setInterval(() => {
+  if (REDUCED_MOTION || document.hidden) return;
+  const now = Date.now();
+  sliders.forEach((st, sl) => { if (st.visible && !st.paused && now >= st.nextAt) goSlide(sl, 1, false); });
+}, 400);
+
+function mediaHTML(car, w){
+  if (!car.images.length) return `<div class="ph">${CAR_SVG}<span>Photos coming soon</span></div>`;
+  return `<img src="${esc(imgSrc(car.images[0], w))}" alt="${esc(car.title)}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',innerHTML:CAR_SVG+'<span>Photo unavailable</span>'}))">`;
+}
+const statusLabel = s => ({available:'Available', reserved:'Reserved', sold:'Sold'})[s];
+function deadlineText(car){
+  if (!car.requestBy || car.status !== 'available' || car.requestBy < new Date()) return '';
+  return 'Request by ' + car.requestBy.toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+}
+function renderGrid(list){
+  const grid = $('#grid');
+  grid.setAttribute('aria-busy','false');
+  $('#resultCount').textContent = list.length === 1 ? '1 car' : `${list.length} cars`;
+  if (!list.length){
+    const none = !state.cars.length;
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1">
+      <h3>${none ? 'New cars are on the way' : 'No cars match these filters'}</h3>
+      <p>${none ? "We're choosing the next cars. Tell us what you want, or send us a car you found, and we'll bring it in." : "Clear the filters to see every car, or tell us the car you want and we'll find it."}</p>
+      <div class="actions">${none ? '' : '<button class="btn btn-line" type="button" id="clearBtn">Clear filters</button>'}<button class="btn btn-dark" type="button" data-open="custom">Request a specific car</button></div></div>`;
+    $('#clearBtn')?.addEventListener('click', clearFilters);
+    return;
+  }
+  grid.innerHTML = list.map(car => {
+    const dl = deadlineText(car);
+    const specs = [car.trim, km(car.mileage), car.transmission, car.location].filter(Boolean);
+    return `<article class="card${car.status === 'sold' ? ' is-sold' : ''}" data-id="${esc(car.id)}">
+      <div class="card-media">${sliderHTML(car)}<span class="status ${car.status}">${statusLabel(car.status)}</span><span class="lot">${esc(car.id)}</span></div>
+      <div class="card-body">
+        <h3 class="card-title"><a class="card-link" href="#car=${encodeURIComponent(car.id)}">${esc(car.title)}</a></h3>
+        <ul class="specs-inline">${specs.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
+        <p class="card-price">${car.price ? naira(car.price) : 'Price on request'}${car.priceNote ? `<small>${esc(car.priceNote)}</small>` : ''}</p>
+        ${car.minUpfront !== null && car.status !== 'sold' ? `<p class="plan-badge">Instalments from ${car.minUpfront}% upfront</p>` : ''}
+        ${dl ? `<p class="deadline">${dl}</p>` : ''}
+        ${car.condition ? `<p class="card-cond">${esc(car.condition)}</p>` : ''}
+      </div></article>`;
+  }).join('');
+  setupSliders();
+}
+
+function paymentHTML(car){
+  if (car.status === 'sold') return '';
+  const blocks = car.plans.map(parts => {
+    const rows = planBreakdown(parts, car.price);
+    return `<div class="plan">
+      <p class="plan-name">${planLabel(parts)}</p>
+      <table class="plan-table"><tbody>${rows.map(r => `<tr><td>${r.pct}%</td><td>${r.amount ? naira(r.amount) : ''}</td><td>${esc(r.due)}</td></tr>`).join('')}</tbody></table>
+    </div>`;
+  }).join('');
+  return `<div class="pay-box"><h3>Payment options</h3>${blocks}</div>`;
+}
+
+/* ---------- Car details ---------- */
+function openCar(id){
+  const car = state.cars.find(c => c.id === id);
+  if (!car) return;
+  state.current = car;
+  const rows = [
+    ['Car ID', car.id], ['Year', car.year], ['Make', car.make], ['Model', car.model], ['Trim', car.trim],
+    ['Body type', car.bodyType], ['Mileage', km(car.mileage)], ['Transmission', car.transmission],
+    ['Fuel', car.fuel], ['Colour', car.colour], ['Where it is now', car.location],
+    ['Ready in', car.readyIn ? `About ${car.readyIn} weeks` : '']
+  ].filter(r => r[1]);
+  const dl = deadlineText(car);
+  const thumbs = car.images.length > 1 ? `<div class="thumbs">${car.images.map((u,i) =>
+    `<button type="button" data-i="${i}" aria-label="Photo ${i+1} of ${car.images.length}" aria-current="${i===0}"><img src="${esc(imgSrc(u,200))}" alt="" loading="lazy"></button>`).join('')}</div>` : '';
+  let actions;
+  if (car.status === 'available') actions = `<button class="btn btn-primary" type="button" data-request="car">Request this car</button>`;
+  else if (car.status === 'reserved') actions = `<button class="btn btn-dark" type="button" data-request="waitlist">Join the waitlist</button>`;
+  else actions = `<button class="btn btn-dark" type="button" data-request="similar">Request a similar car</button>`;
+  const note = car.status === 'reserved' ? "Someone has requested this car. Join the waitlist and we'll contact you if it becomes available."
+    : car.status === 'sold' ? "This car has been sold. We can find you a similar one."
+    : "Requests are free. We confirm the final price, payment plan and delivery with you before buying.";
+
+  $('#carBody').innerHTML = `<div class="detail">
+    <div class="gallery">
+      <div class="gallery-main" id="galMain">${mediaHTML(car, 1400)}${car.images.length > 1 ? `
+        <button type="button" class="slide-btn prev" data-gal="-1" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="slide-btn next" data-gal="1" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>` : ''}</div>${thumbs}
+    </div>
+    <div class="detail-info">
+      <h2 id="carTitle">${esc(car.title)}</h2>
+      <span class="status-line ${car.status}">${statusLabel(car.status)}</span>
+      <p class="detail-price">${car.price ? naira(car.price) : 'Price on request'}${car.priceNote ? `<small>${esc(car.priceNote)}</small>` : ''}</p>
+      ${dl ? `<p class="deadline" style="margin-top:8px">${dl}</p>` : ''}
+      <dl class="specs">${rows.map(([k,v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+      ${car.condition ? `<div class="damage-box"><h3>Condition and history</h3><p>${esc(car.condition)}</p></div>` : ''}
+      ${paymentHTML(car)}
+      ${car.description ? `<p class="detail-desc">${esc(car.description)}</p>` : ''}
+      <div class="detail-actions">
+        ${actions}
+        <a class="btn btn-wa" href="${waLink(`Hi ${CONFIG.businessName}, I'm interested in the ${car.title} (${car.id}). ${carUrl(car)}`)}" target="_blank" rel="noopener">Ask on WhatsApp</a>
+        <button class="btn btn-line" type="button" id="shareBtn">Share this car</button>
+      </div>
+      <p class="note">${note}</p>
+    </div></div>`;
+
+  let idx = 0;
+  const showImg = i => {
+    idx = (i + car.images.length) % car.images.length;
+    const img = $('#galMain img');
+    if (img) { img.src = imgSrc(car.images[idx], 1400); img.alt = `${car.title}, photo ${idx+1}`; }
+    $$('.thumbs button').forEach((b,j) => b.setAttribute('aria-current', j === idx));
+  };
+  $$('.thumbs button').forEach(b => b.addEventListener('click', () => showImg(+b.dataset.i)));
+  if (car.images.length > 1){
+    $('#galMain').addEventListener('click', e => {
+      const b = e.target.closest('[data-gal]');
+      showImg(idx + (b ? +b.dataset.gal : 1));
+    });
+    $('#carBody').addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') showImg(idx - 1);
+      if (e.key === 'ArrowRight') showImg(idx + 1);
+    });
+  }
+  $('#shareBtn').addEventListener('click', () => shareCar(car));
+  $('[data-request]', $('#carBody')).addEventListener('click', e => {
+    const m = e.currentTarget.dataset.request;
+    $('#carDialog').close();
+    openRequest(m === 'similar' ? 'custom' : m, car);
+  });
+
+  history.replaceState(null, '', '#car=' + encodeURIComponent(car.id));
+  const dlg = $('#carDialog');
+  if (!dlg.open) dlg.showModal();
+  dlg.scrollTop = 0;
+}
+async function shareCar(car){
+  const url = carUrl(car);
+  const text = `${car.title}${car.price ? ' for ' + naira(car.price) : ''} at ${CONFIG.businessName}`;
+  if (navigator.share){ try { await navigator.share({title: car.title, text, url}); } catch(e){} return; }
+  try { await navigator.clipboard.writeText(url); toast('Link copied'); }
+  catch(e){ prompt('Copy this link:', url); }
+}
+function openFromHash(){
+  const m = location.hash.match(/^#car=(.+)$/);
+  if (m) openCar(decodeURIComponent(m[1]));
+}
+
+/* ---------- Request form ---------- */
+const MODES = {
+  car:      { title: 'Request this car', intro: "Leave your details and we'll contact you within 24 hours to confirm the price, payment plan and delivery.", type: 'Car request', button: 'Send request' },
+  waitlist: { title: 'Join the waitlist', intro: "We'll contact you if this car becomes available, or offer you a similar one.", type: 'Waitlist', button: 'Join the waitlist' },
+  custom:   { title: 'Request a specific car', intro: "Tell us what you want. We'll search the US market and send you options with full prices.", type: 'Custom search', button: 'Send request' },
+  link:     { title: 'Send us a car you found', intro: "Paste the link to the car. We'll check the seller is genuine and that we can bring it in, then send you a full quote. Work starts once you pay.", type: 'Car link', button: 'Send for checking' }
+};
+function setMode(mode){
+  const form = $('#requestForm');
+  $$('[data-modes]', form).forEach(el => {
+    const show = el.dataset.modes.split(' ').includes(mode);
+    el.hidden = !show;
+    $$('input,select,textarea', el).forEach(i => {
+      i.disabled = !show;
+      if (i.dataset.req !== undefined) i.required = show && i.dataset.req.split(' ').includes(mode);
+    });
+  });
+  // Fields outside the mode-specific sections that are required only for some forms (e.g. email)
+  $$('[data-req]', form).forEach(i => {
+    if (!i.closest('[data-modes]')) i.required = i.dataset.req.split(' ').includes(mode);
+  });
+  $('#fEmailLabel').textContent = $('#fEmail').required ? 'Email *' : 'Email';
+  $('#fWantLabel').textContent = mode === 'link' ? 'Which car is it?' : 'Car you want *';
+}
+function toggleAddress(){
+  const on = $('#fDelivery').value === 'Deliver to my location';
+  $('#addrField').hidden = !on;
+  $('#fAddr').disabled = !on; $('#fAddr').required = on;
+}
+function openRequest(mode, car = null){
+  state.mode = mode; state.current = car;
+  const form = $('#requestForm');
+  form.reset();
+  $('#formStatus').textContent = ''; $('#formStatus').className = 'form-status full';
+  $('#reqForm').hidden = false; $('#reqSuccess').hidden = true;
+  setMode(mode);
+  toggleAddress();
+  if (mode === 'custom' && car) {
+    $('#fWant').value = [car.make, car.model, car.trim].filter(Boolean).join(' ');
+    $('#fYears').value = car.year ? `${car.year - 1} to ${car.year + 1}` : '';
+  }
+  if (mode === 'car' && car){
+    $('#fPlanSel').innerHTML = car.plans.map(p => `<option>${planLabel(p)}</option>`).join('');
+    const multi = car.plans.length > 1;
+    $('#planField').hidden = !multi; $('#fPlanSel').disabled = !multi;
+    $('#planHint').textContent = multi ? 'The first payment is due before we buy the car. We confirm the full schedule with you.' : '';
+  }
+  const m = MODES[mode];
+  $('#reqTitle').textContent = m.title;
+  $('#reqIntro').textContent = m.intro;
+  $('#submitBtn').textContent = m.button;
+  $('#reqSummary').innerHTML = car && (mode === 'car' || mode === 'waitlist') ? `<div class="req-summary">
+      ${car.images.length ? `<img src="${esc(imgSrc(car.images[0],200))}" alt="">` : '<span class="ph-mini" aria-hidden="true"></span>'}
+      <div><strong>${esc(car.title)}</strong><br>${esc(car.id)}${car.price ? '<br>' + naira(car.price) : ''}</div></div>` : '';
+  const dlg = $('#requestDialog');
+  if (!dlg.open) dlg.showModal();
+  dlg.scrollTop = 0;
+}
+async function submitRequest(e){
+  e.preventDefault();
+  const form = e.target;
+  if (!form.reportValidity()) return;
+  const car = state.current;
+  const forCar = car && (state.mode === 'car' || state.mode === 'waitlist');
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.type = MODES[state.mode].type;
+  data.carId = forCar ? car.id : '';
+  data.carTitle = forCar ? car.title : '';
+  if (state.mode === 'car' && !data.paymentPlan) data.paymentPlan = planLabel(car.plans[0]);
+  data.page = location.href;
+  const btn = $('#submitBtn'), status = $('#formStatus');
+  btn.disabled = true; btn.textContent = 'Sending…'; status.textContent = ''; status.className = 'form-status full';
+
+  try {
+    let ref;
+    if (!CONFIG.sheetApiUrl){
+      ref = 'SAMPLE-' + Math.floor(1000 + Math.random()*9000);
+    } else {
+      const res = await fetch(CONFIG.sheetApiUrl, { method: 'POST', body: new URLSearchParams(data) });
+      const out = await res.json();
+      if (!out.ok){ const e = new Error(out.error || 'Request not saved'); e.fromServer = !!out.error; throw e; }
+      ref = out.requestId;
+      data.emailed = !!out.emailed;
+    }
+    showSuccess(ref, data);
+  } catch (err){
+    console.error(err);
+    const label = data.carTitle ? `the ${data.carTitle} (${data.carId})` : data.listingLink ? `this car: ${data.listingLink}` : (data.wantedCar || 'a car');
+    status.className = 'form-status full error';
+    if (err.fromServer){ status.textContent = err.message; return; }
+    status.innerHTML = `Your request didn't go through. Check your connection and try again, or <a href="${waLink(`Hi ${CONFIG.businessName}, I'd like to request ${label}. My name is ${data.name}.`)}" target="_blank" rel="noopener">send it on WhatsApp</a> instead.`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = MODES[state.mode].button;
+  }
+}
+function showSuccess(ref, data){
+  const label = data.carTitle ? `the ${data.carTitle}` : data.listingLink ? 'the car you sent us' : (data.wantedCar || 'your car');
+  const heading = {waitlist: "You're on the waitlist", link: 'Link received'}[state.mode] || 'Request sent';
+  const next = state.mode === 'link'
+    ? `We'll check the seller and the car, then contact ${esc(data.name.split(' ')[0])} with a full quote within 24 hours.`
+    : `We'll contact ${esc(data.name.split(' ')[0])} on ${esc(data.contactVia === 'Email' ? 'email' : data.phone)} within 24 hours about ${esc(label)}.`;
+  $('#reqForm').hidden = true;
+  const box = $('#reqSuccess');
+  box.hidden = false;
+  box.innerHTML = `<div class="tick" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h2 tabindex="-1" id="successTitle">${heading}</h2>
+    <p>Your reference number is</p>
+    <div class="ref">${esc(ref)}</div>
+    <p>${next}${data.emailed ? ` We've also emailed your reference to ${esc(data.email)}.` : ''}${state.demo ? ' (This is a sample request. Nothing was saved because no Google Sheet is connected yet.)' : ''}</p>
+    <div class="form-actions">
+      <a class="btn btn-wa" href="${waLink(`Hi ${CONFIG.businessName}, I just sent request ${ref} for ${label}.`)}" target="_blank" rel="noopener">Continue on WhatsApp</a>
+      <button class="btn btn-line" type="button" data-close>Done</button>
+    </div>`;
+  $('#successTitle').focus();
+}
+
+/* ---------- Events ---------- */
+document.addEventListener('click', e => {
+  const slideBtn = e.target.closest('[data-slide]');
+  if (slideBtn){ e.preventDefault(); goSlide(slideBtn.closest('.slider'), +slideBtn.dataset.slide, true); return; }
+  const card = e.target.closest('.card[data-id]');
+  if (card){
+    e.preventDefault();
+    if (Date.now() - (+card.dataset.swiped || 0) < 500) return;   // that was a swipe, not a tap
+    openCar(card.dataset.id); return;
+  }
+  const opener = e.target.closest('[data-open]');
+  if (opener){ openRequest(opener.dataset.open); return; }
+  const close = e.target.closest('[data-close]');
+  if (close){ close.closest('dialog').close(); return; }
+  if (e.target.tagName === 'DIALOG') e.target.close();
+});
+$('#carDialog').addEventListener('close', () => {
+  if (location.hash.startsWith('#car=')) history.replaceState(null, '', location.pathname + location.search);
+});
+window.addEventListener('hashchange', openFromHash);
+['#fMake','#fBody','#fSort','#fYearFrom','#fYearTo','#fAvail','#fPlan'].forEach(s => $(s).addEventListener('change', applyFilters));
+['#q','#fMin','#fMax'].forEach(s => $(s).addEventListener('input', applyFilters));
+// Show typed prices with commas once the buyer leaves the box (15m -> 15,000,000)
+['#fMin','#fMax'].forEach(s => $(s).addEventListener('blur', e => {
+  const n = parseMoney(e.target.value);
+  if (Number.isFinite(n)) e.target.value = new Intl.NumberFormat('en-NG').format(n);
+}));
+$('#clearFiltersBtn').addEventListener('click', clearFilters);
+$('#fDelivery').addEventListener('change', toggleAddress);
+$('#paneToggle').addEventListener('click', e => {
+  const firstNew = $$('.card', $('#grid')).find(c => c.hidden);
+  if (e.currentTarget.dataset.action === 'more'){
+    shownRows += PANE_ROWS;
+    layoutPane();
+    firstNew?.focus({preventScroll: true});
+  } else {
+    shownRows = PANE_ROWS;
+    layoutPane();
+    $('#cars').scrollIntoView({block: 'start'});
+  }
+});
+let paneTimer;
+window.addEventListener('resize', () => { clearTimeout(paneTimer); paneTimer = setTimeout(layoutPane, 150); });
+document.fonts?.ready.then(layoutPane);
+$('#requestForm').addEventListener('submit', submitRequest);
+
+loadCars();
+});
+</script>
+</body>
+</html>
